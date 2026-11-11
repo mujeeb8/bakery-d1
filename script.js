@@ -15,7 +15,7 @@ const cakeImages = [
 const collection = document.querySelector(".collection");
 collection.insertAdjacentHTML(
   "beforeend",
-  `<div class="gallery-intro"><p class="eyebrow">MÁS PARA AMAR</p><h3>Explora el diario completo de pasteles.</h3></div><div class="cake-gallery">${cakeImages.map((image, index) => `<button class="cake-card" data-image="${image}" aria-label="Ver pastel ${index + 1}"><img src="../assets/${image}" alt="Pastel personalizado de Dayi's Sweet ${index + 1}"><span>VER ${String(index + 1).padStart(2, "0")}</span></button>`).join("")}</div>`,
+  `<div class="gallery-intro"><p class="eyebrow">MÁS PARA AMAR</p><h3>Explora el diario completo de pasteles.</h3></div><div class="cake-gallery">${cakeImages.map((image, index) => `<button class="cake-card" data-image="${image}" aria-label="Ver pastel ${index + 1}"><img src="assets/${image}" alt="Pastel personalizado de Dayi's Sweet ${index + 1}"><span>VER ${String(index + 1).padStart(2, "0")}</span></button>`).join("")}</div>`,
 );
 document.body.insertAdjacentHTML(
   "beforeend",
@@ -32,7 +32,7 @@ document
   .addEventListener("click", () => dialog.close());
 document.querySelectorAll(".cake-card").forEach((card) =>
   card.addEventListener("click", () => {
-    document.querySelector(".cake img").src = `../assets/${card.dataset.image}`;
+    document.querySelector(".cake img").src = `assets/${card.dataset.image}`;
     window.scrollTo({ top: 0, behavior: "smooth" });
   }),
 );
